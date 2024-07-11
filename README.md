@@ -2,4 +2,6 @@
 
 Monthly coding challenges from colleagues.
 
-### QuizGame - 2024/07/11
+<details>
+<summary><h2>QuizGame - 2024/07/11</h2></summary>
+</details>
