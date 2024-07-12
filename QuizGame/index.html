@@ -4,18 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+
     <title>Quiz</title>
   </head>
   <body>
     <h1>Quiz Game - GitGud Sapconet</h1>
     <h2>-Dale Willemse</h2>
     <section class="grid-container">
-      <div class="grid-item">lorem</div>
-      <div class="grid-item">lorem</div>
-      <div class="grid-item">lorem</div>
-      <div class="grid-item">lorem</div>
-      <div class="grid-item">lorem</div>
-      <div class="grid-item">lorem</div>
+      <div class="grid-item"></div>
+      <div class="grid-item" id="ques"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item" id="opt"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item" id="score"></div>
+      <div class="grid-item">
+        <button onClick="checkAns()" id="btn">Submit</button>
+      </div>
+      <div class="grid-item"></div>
     </section>
+    <script src="main.js"></script>
   </body>
 </html>
