@@ -30,36 +30,32 @@ if (Questions.length === 0) {
 function loadQues() {
   const opt = document.getElementById("opt");
   let currentQuestion = Questions[currQuestion].question;
-  if (currentQuestion.indexOf('"') > -1) {
-    currentQuestion = currentQuestion.replace(/"/g, '"');
-  }
-  if (currentQuestion.indexOf('"') > -1) {
-    currentQuestion = currentQuestion.replace(/&#039;/g, "'");
-  }
+
+  currentQuestion = currentQuestion
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/;/g, "");
+
   ques.innerText = currentQuestion;
   opt.innerHTML = "";
+
   const correctAnswer = Questions[currQuestion].correct_answer;
-  console.log(Questions);
   const incorrectAnswers = Questions[currQuestion].incorrect_answers;
   const options = [correctAnswer, ...incorrectAnswers];
   options.sort(() => Math.random() - 0.5);
+
   options.forEach((option) => {
-    if (option.indexOf('"') > -1) {
-      option = option.replace(/"/g, '"');
-    }
-    if (option.indexOf('"') > -1) {
-      option = option.replace(/'/g, "'");
-    }
-    const choicesdiv = document.createElement("div");
-    const choice = document.createElement("input");
+    option = option.replace(/"/g, '"').replace(/&#039/g, "'");
+
     const choiceLabel = document.createElement("label");
+    const choice = document.createElement("input");
     choice.type = "radio";
     choice.name = "answer";
     choice.value = option;
-    choiceLabel.textContent = option;
-    choicesdiv.appendChild(choice);
-    choicesdiv.appendChild(choiceLabel);
-    opt.appendChild(choicesdiv);
+    choiceLabel.appendChild(choice);
+    choiceLabel.appendChild(document.createTextNode(option));
+
+    opt.appendChild(choiceLabel);
   });
 }
 

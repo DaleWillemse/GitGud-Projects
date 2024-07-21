@@ -1,8 +1,10 @@
+body {
+  text-align: center;
+}
 .grid-container {
   display: grid;
   gap: 10px;
   grid-template-columns: auto auto auto;
-  background-color: black;
   padding: 10px;
 }
 
@@ -15,5 +17,24 @@
 
 #opt {
   display: flex;
-  padding: 50px;
+  background-color: white;
+  padding: 20px;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+#opt > label {
+  padding: 0vh 5vh 0vh 5vh;
+}
+
+#opt :hover {
+  cursor: pointer;
+  color: red;
+  padding: 0vh 5vh 0vh 5vh;
+}
+
+#btn {
+  padding: 2vh 5vh;
+  cursor: pointer;
 }
