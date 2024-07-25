@@ -1,6 +1,22 @@
+* {
+  background-color: whitesmoke;
+}
+
 body {
   text-align: center;
 }
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#start-screen {
+  margin-top: 20px;
+}
+
 .grid-container {
   display: grid;
   gap: 10px;
@@ -9,7 +25,6 @@ body {
 }
 
 .grid-item {
-  background-color: white;
   padding: 20px;
   font-size: 30px;
   text-align: center;
@@ -17,7 +32,6 @@ body {
 
 #opt {
   display: flex;
-  background-color: white;
   padding: 20px;
   font-size: 30px;
   justify-content: center;
@@ -30,11 +44,50 @@ body {
 
 #opt :hover {
   cursor: pointer;
-  color: red;
+  color: blueviolet;
   padding: 0vh 5vh 0vh 5vh;
 }
 
 #btn {
   padding: 2vh 5vh;
+  background-color: white;
   cursor: pointer;
+}
+
+.choice {
+  cursor: pointer;
+}
+
+.choice.correct {
+  color: green;
+  animation: jump 0.5s ease-in-out;
+}
+
+.choice.incorrect {
+  color: red;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

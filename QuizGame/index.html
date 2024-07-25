@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
     <title>Quiz</title>
   </head>
   <body>
     <h1>Quiz Game - GitGud Sapconet</h1>
     <h2>-Dale Willemse</h2>
-    <section class="grid-container">
+    <section id="start-screen">
+      <button onclick="loadCategory('general')">General Knowledge</button>
+      <button onclick="loadCategory('sports')">Sports</button>
+      <button onclick="loadCategory('videogames')">Video Games</button>
+      <button onclick="loadCategory('movies')">Movies</button>
+    </section>
+    <section class="grid-container" id="quiz-section" style="display: none">
       <div class="grid-item"></div>
       <div class="grid-item" id="ques"></div>
       <div class="grid-item"></div>
@@ -19,7 +24,7 @@
       <div class="grid-item"></div>
       <div class="grid-item" id="score"></div>
       <div class="grid-item">
-        <button onClick="checkAns()" id="btn">Submit</button>
+        <button onclick="resetGame()" id="btn">Reset</button>
       </div>
       <div class="grid-item"></div>
     </section>
